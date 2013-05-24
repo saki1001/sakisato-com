@@ -1,0 +1,598 @@
+
+/* Structure
+-------------------------------------------------------------- */
+/*Clearfixing main elements*/
+body:before,
+body:after,
+#page:before,
+#page:after,
+header:before,
+header:after,
+#header-container:before,
+#header-container:after,
+#main:before,
+#main:after,
+#footer-content:before,
+#footer-content:after {
+    content:"";
+    display:table;
+}
+body:after,
+#page:after,
+header:after,
+#header-container:after,
+#main:after,
+#footer-content:after {
+    clear:both;
+}
+body,
+#page,
+header,
+#main,
+.footer-content {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial', Helvetica, sans-serif;
+    font-size: 62.5%;
+    line-height: 1;
+    color: #666666;
+    position: relative;
+    background-color: #E6E6E6;
+}
+
+#page {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    position: relative;
+    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */;
+    padding: 0 30px;
+    width: 90%;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+}
+
+/*
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+*/
+
+#footer, .push {
+    height: 50px; /* .push must be the same height as .footer */
+}
+
+.push {
+    width: 100%;
+    overflow: hidden; /*clearfix*/
+    position: relative;
+    z-index: -1;
+    background-color: #FFFFFF;
+}
+
+header,
+#main {
+    max-width: 950px;
+    margin: 0 auto;
+/*    float: left;*/
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text,
+.assistive-text {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Alignment */
+.alignleft {
+    display: inline;
+    float: left;
+}
+.alignright {
+    display: inline;
+    float: right;
+}
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Links
+-------------------------------------------------------------- */
+a, a:link, a:visited {
+    color: #C9C9C9;
+    text-decoration: none;
+    -webkit-transition: color .25s ease-in-out;
+       -moz-transition: color .25s ease-in-out;
+            transition: color .25s ease-in-out;
+}
+
+a:active, a:hover {
+    color: #666666;
+    text-decoration: none;
+}
+
+/* Forms
+-------------------------------------------------------------- */
+input:focus {
+    outline: none;
+    border: none;
+}
+
+/* Headers
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5 {
+    font-weight: normal;
+}
+
+/* Header
+-------------------------------------------------------------- */
+header {
+    position: relative;
+}
+
+#header-container {
+    width: 950px;
+    padding: 30px 0 40px;
+/*    border-bottom: solid #C9C9C9 4px;*/
+/*    box-shadow: 0 2px 0 0 #999999;*/
+    background: #FFFFFF url('../images/header-border.jpg') repeat-x 0 72px;
+}
+
+header #logo {
+    float: left;
+}
+
+header h1 {
+    width: 100%;
+}
+
+header h1 a {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: #C9C9C9;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 0 rgb(174,174,174),-1px 0px 0 rgb(146,146,146), -2px 0px 0 rgb(119,119,119),-3px 0px 2px rgba(0,0,0,0.2),-3px 0px 1px rgba(0,0,0,0.5),0px 0px 2px rgba(0,0,0,.2);
+}
+
+header h1 a:hover {
+/*    color: #5CADE2;*/
+    color: #E7A6E6;
+}
+
+header h1 a span {
+/*    visibility: hidden;*/
+}
+
+/* Menu
+-------------------------------------------------------------- */
+
+#main-menu {
+    display: block;
+    font-size: 1.9em;
+    float: right;
+    margin: 10px 0 0 0;
+    float: right;
+}
+
+#main-menu h3 {
+    float: left;
+}
+
+#main-menu .menu-main-container {
+    float: right;
+}
+
+#main-menu ul {
+    float: left;
+}
+
+
+#main-menu li {
+    float: left;
+}
+
+#main-menu a {
+    font-weight: bold;
+    display: block;
+    margin-left: 27px;
+    text-decoration: none;
+}
+
+
+/* General
+-------------------------------------------------------------- */
+
+#main {
+    position: relative;
+}
+
+
+#main #content {
+    width: 100%;
+    padding-bottom: 42px;
+    margin-bottom: 20px;
+    opacity: 0; /*shown on fadein*/
+    position: relative;
+}
+
+#main #content .post-nav {
+    width: 100%;
+    max-width: 950px;
+    height: 20px;
+}
+
+#main #content .post-nav li {
+    position: absolute;
+    z-index: 1000;
+}
+
+#main #content .post-nav li#prev-post {
+    left: -40px;
+}
+
+#main #content .post-nav li#next-post {
+    right: -40px;
+}
+
+#main #content .post-nav li a {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#main #content .post {
+    width: 100%;
+}
+
+#main #content .post .description {
+    width: 230px;
+    margin-right: 20px;
+}
+
+#main #content .post .description .title {
+    font-size: 3em;
+    line-height: 1.1;
+    padding-bottom: 8px;
+}
+
+#main #content .post .description .content img {
+    max-width: 542px;
+    border: 4px solid #000000;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+#main #content .post .description .content p {
+    font-size: 1.5em;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+#main #content .post .images {
+    width: 700px;
+    margin-left: 250px;
+}
+
+#main #content .post .images figure {
+    margin-bottom: 20px;
+}
+
+/* Home
+-------------------------------------------------------------- */
+body.home .slideshow_container {
+    margin-left: 20px;
+    background-color: #C9C9C9;
+    box-shadow: -20px 20px 0 0 #C6C6C6;
+}
+
+
+/* Page Template
+-------------------------------------------------------------- */
+body.page #main #content {
+    width: 100%;
+}
+
+body.page #main #content article {
+    float: left;
+}
+
+body.page #main #content article .text-container {
+    width: 450px;
+    margin-right: 30px;
+    float: left;
+}
+
+body.page #main #content article .text-container.no-image {
+    width: 750px;
+}
+
+body.page #main #content .text-container h3 {
+    font-size: 4.2em;
+    font-weight: bold;
+    line-height: 1;
+    margin: 10px 0 20px;
+}
+
+body.page #main #content article .text-container p {
+    font-size: 1.5em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+body.page #main #content article .text-container.no-image p {
+    margin-bottom: 20px;
+}
+
+body.page #main #content article figure {
+    width: 470px;
+    height: 673px;
+    background-color: #F4F4F4;
+    float: right;
+}
+
+body.page #main #content article figcaption {
+    width: 470px;
+    margin: 15px 0 25px;
+    font-size: 1.3em;
+    font-family: 'Arial', Helvetica, sans-serif;
+    float: right;
+}
+
+/* Category and Tags ---- Browse
+-------------------------------------------------------------- */
+body.category #main #content,
+body.tag #main #content {
+    width:100%;
+}
+
+body.category #main #content #articles,
+body.tag #main #content #articles {
+    width: 700px;
+    margin-left: 250px;
+}
+
+#main #content #sidebar .tag-list li.current a {
+    color: #E7A6E6;
+    cursor: default;
+}
+
+#main #content .browse-posts {
+    width: 100%;
+    float: left;
+}
+
+#main #content .browse-posts .column {
+    margin: 0 0 20px 20px;
+    position: relative;
+    float: left;
+}
+
+#main #content .browse-posts .column.first {
+    margin-left: 0;
+}
+
+#main #content .browse-posts .thumb a {
+    display: block;
+    overflow: hidden;
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+    color: #666666;
+    -webkit-transition: opacity .35s ease-in-out;
+       -moz-transition: opacity .35s ease-in-out;
+            transition: opacity .35s ease-in-out;
+    -webkit-background-size: 220px 220px !important;
+       -moz-background-size: 220px 220px !important;
+            background-size: 220px 220px !important;
+    position: relative;
+    z-index: 2;
+}
+
+#main #content .browse-posts .thumb a:hover {
+    opacity: 0.25;
+}
+
+#main #content .browse-posts .thumb figcaption {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    color: #666666;
+    background-color: #E7A6E6;
+    z-index: 1;
+}
+
+#main #content .browse-posts .thumb figcaption h4 {
+    font-size: 1.9em;
+    font-weight: bold;
+    padding: 20px 20px 0 20px;
+}
+
+#main #content .browse-posts .thumb figcaption p {
+    font-size: 1.35em;
+    font-weight: bold;
+    padding: 10px 0 0 20px;
+}
+
+
+/* Sidebar
+-------------------------------------------------------------- */
+#main #sidebar {
+    width: 230px;
+    margin-right: 20px;
+    position: absolute;
+}
+
+#main #sidebar h5 {
+    font-size: 2em;
+    color: #999999;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #C9C9C9;
+}
+
+#main #sidebar .tag-list li {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+
+/* Single Post
+-------------------------------------------------------------- */
+body.single #header-container {
+    position: fixed;
+    z-index: 10;
+}
+
+body.single #main {
+    margin-top: 100px;
+}
+
+body.single #main #content .post-nav {
+    position: fixed;
+}
+
+body.single #main #sidebar {
+    position: fixed;
+}
+
+body.single #main #content .post .description {
+    position: fixed;
+}
+
+
+/* Infinite Scroll Loading
+-------------------------------------------------------------- */
+#main #content .pagination {
+    display: none;
+}
+
+#main #content #infscr-loading {
+    width: 100%;
+    height: 32px;
+    margin:0;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.category-news #main #content #infscr-loading {
+    width: 550px;
+}
+
+#main #content #infscr-loading img {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 48%;
+}
+
+#main #content #infscr-loading div {
+    font-size: 1.4em;
+    color: #666666;
+    padding-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Content No Found
+-------------------------------------------------------------- */
+#content .not-found {
+    font-size: 1.6em;
+    margin-bottom: 400px;
+}
+
+/* Images
+-------------------------------------------------------------- */
+
+a img {
+    border: none;
+}
+p img {
+    margin-bottom: 0.5em; /* a small bottom margin prevents content floating under images */
+}
+/*
+Resize images to fit the main content area.
+- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Other images will be left alone. Use "size-auto" class to apply to other images.
+*/
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img,
+.widget-area img,
+.wp-caption {
+    max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+    height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+img.alignleft {
+    margin-right: 1em;
+}
+img.alignright {
+    margin-left: 1em;
+}
+.wp-caption {
+    padding: .5em;
+    text-align: center;
+}
+.wp-caption img {
+    margin: .25em;
+}
+.wp-caption .wp-caption-text {
+    margin: .5em;
+}
+.gallery-caption {
+}
+.wp-smiley {
+    margin: 0;
+}
+
+
+/* Footer
+-------------------------------------------------------------- */
+#footer {
+    width: 90%;
+    padding: 0 30px;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 1.6em;
+    background-color: #FFFFFF;
+}
+
+#footer-content {
+    max-width: 950px;
+    padding: 10px 0;
+    margin: 0 auto;
+    text-align: right;
+    border-top: solid 1px #C9C9C9;
+    position: relative;
+    z-index: 2;
+}
+
+#footer #footer-logo {
+    width: 270px;
+    height: 31px;
+/*    background: url('../images/holland-logo.png') no-repeat 0 0;*/
+    float: right;
+}
+
+#footer #footer-logo h4 {
+    color: #999999;
+    font-size: 0.7em;
+    margin: 12px 0 0 95px;
+    text-align: right;
+}

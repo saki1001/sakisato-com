@@ -1,0 +1,269 @@
+/* Structure
+-------------------------------------------------------------- */
+
+#page {
+    width: 400px;
+    padding: 0 10px;
+}
+
+header,
+#main {
+    width: 400px;
+}
+
+/* Header
+-------------------------------------------------------------- */
+header {
+    position: relative;
+    padding: 10px 0 18px;
+}
+
+header #logo {
+    width: 150px;
+    height: 52px;
+    background: url('../images/dutch-innovation-logo-mobile.png') no-repeat 0 0;
+}
+
+header h1 a {
+    width: 150px;
+    height: 52px;
+}
+
+header h4 {
+    font-size: 1.6em;
+    padding-top: 22px;
+}
+
+/* Menu
+-------------------------------------------------------------- */
+
+#main-menu {
+    font-size: 2.3em;
+    padding: 15px 0;
+    margin: 10px 0 0 0;
+    text-align: center;
+    width: 400px;
+}
+
+#main-menu h3 {
+/*    display: none;*/
+    width: 100%;
+    border-bottom: solid 1px #000000;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+}
+
+#main-menu .menu-main-container {
+    float: left;
+}
+
+/* General
+-------------------------------------------------------------- */
+#main #content #articles {
+    width: 400px;
+    margin-right: 0;
+    float: left;
+}
+
+#main #content article.post {
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+}
+
+#main #content article.post.last {
+    margin-bottom: 20px;
+}
+
+#main #content article.post h2 a {
+    font-size: 3.8em;
+    padding-bottom: 5px;
+}
+
+#main #content article.post .post-subtitle {
+    font-size: 2.2em;
+    padding-bottom: 8px;
+}
+
+#main #content article.post .social-icons {
+    margin-bottom: 12px;
+}
+
+#main #content article.post .social-icons li {
+    margin-right: 3px;
+}
+
+#main #content .text-container img {
+    max-width: 392px;
+}
+
+#main #content .text-container p {
+    font-size: 1.4em;
+    margin-bottom: 12px;
+}
+
+/* Home
+-------------------------------------------------------------- */
+
+/* Page Template
+-------------------------------------------------------------- */
+body.page #main #content article .text-container {
+    width: 400px;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+body.page #main #content article .text-container.no-image {
+    width: 400px;
+}
+
+body.page #main #content .text-container h3 {
+    font-size: 3.5em;
+    margin: 8px 0 15px;
+}
+
+body.page #main #content article .text-container p {
+    font-size: 1.4em;
+}
+
+body.page #main #content article figure {
+    display: none;
+}
+
+/*body.page #main #content article figure {
+    width: 400px;
+    height: 572px;
+}
+
+body.page #main #content article figcaption {
+    width: 400px;
+    margin: 10px 0 15px;
+}*/
+
+/* Infinite Scroll Loading
+-------------------------------------------------------------- */
+
+
+/* Category and Tags ---- Browse
+-------------------------------------------------------------- */
+#main #content .browse-filters p {
+    display: none;
+}
+
+#main #content .browse-filters .tag-list {
+    display: none;
+}
+
+#main #content .browse-filters #searchform {
+    width: 400px;
+    margin: 5px 0 12px;
+    float: left;
+}
+
+#main #content .browse-filters #searchform input[type="text"] {
+    width: 355px;
+}
+
+#main #content .browse-posts {
+    width: 100%;
+    float: left;
+}
+
+#main #content .browse-posts .column,
+#main #content .browse-posts .column.first {
+    margin: 0 10px 10px 0;
+}
+
+#main #content .browse-posts .column.odd {
+    margin: 0 0 10px 0;
+}
+
+#main #content .browse-posts .thumb a {
+    width: 187px;
+    height: 187px;
+    -webkit-background-size: cover !important;
+            background-size: cover !important;
+}
+
+#main #content .browse-posts .thumb figcaption {
+    width: 187px;
+    height: 187px;
+}
+
+#main #content .browse-posts .thumb figcaption h4 {
+    font-size: 1.9em;
+    padding: 15px 15px 0 15px;
+}
+
+#main #content .browse-posts .thumb figcaption p {
+    font-size: 1.4em;
+    padding: 8px 0 0 15px;
+}
+
+
+/* Sidebar
+-------------------------------------------------------------- */
+#main #sidebar {
+    width: 400px;
+    float: left;
+}
+
+/* Sidebar - Homepage
+-------------------------------------------------------------- */
+#main #sidebar .post-date-nav {
+    margin: 2px 0 15px;
+    width: 100%;
+    position: relative;
+}
+
+#main #sidebar .post-date-nav li.prev,
+#main #sidebar .post-date-nav li.next {
+    width: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+#main #sidebar .post-date-nav li.prev {
+    right: 30px;
+}
+
+#main #sidebar .post-date-nav li.post-date {
+    width: 360px;
+    margin-right: 40px;
+    font-size: 2em;
+}
+
+#main #sidebar .post-summary,
+#main #sidebar .quote,
+#main #sidebar .promo {
+    display: none;
+}
+
+/* Sidebar - Featured
+-------------------------------------------------------------- */
+#main #sidebar.featured {
+    display: none
+}
+
+/* Infinite Scroll Loading
+-------------------------------------------------------------- */
+.category-news #main #content #infscr-loading {
+    width: 400px;
+}
+
+/* Content No Found
+-------------------------------------------------------------- */
+
+/* Images
+-------------------------------------------------------------- */
+
+/* Footer
+-------------------------------------------------------------- */
+#footer-content {
+    width: 400px;
+}
+
+#footer-content #footer-logo {
+    display: none;
+}

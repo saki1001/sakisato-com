@@ -54,7 +54,7 @@
      
      register_sidebar();
  }
- add_action( 'init', 'cleanslate_widgets_init' );
+
 
 // Adding Jquery
 function register_jquery() {
@@ -127,7 +127,10 @@ function get_category_tags($args) {
 add_theme_support( 'post-thumbnails' );
 
 // Adding Custom Thumbnail Size for Work page
-add_image_size( 'browse-thumbnail', 220, 220, true );
+add_image_size( 'browse-thumbnail', 225, 225, true );
+
+// Adding Custom Thumbnail Size for Pages
+add_image_size( 'page', 427, 9999 );
 
 
 // Add "last" class to last post in loop

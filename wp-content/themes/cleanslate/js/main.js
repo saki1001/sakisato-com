@@ -51,6 +51,12 @@ $j(document).ready(function(){
     // Fade in content onload
     fadeInPage();
     
+    // Resize Browse Thumbs
+    $j(window).resize(function(){
+      var thumbWidth = $j('#content .thumb').width();
+      $j("#content .thumb").height(thumbWidth);
+    });
+    
     $j('a').bind('click', fadeOutRedirect);
     
 });

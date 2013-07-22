@@ -15,10 +15,10 @@
             
             if ( have_posts() ) :
                 
-                if ( is_category('blog') ) :
+                if ( is_category('blank') ) :
                     
                     // Sidebar
-                    get_sidebar('tags');
+                    get_sidebar();
             ?>
                     <div id="articles">
                         <?php

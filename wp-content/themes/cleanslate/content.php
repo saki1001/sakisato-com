@@ -20,8 +20,14 @@
         </div>
     </div>
     
-    <div class="images">
+    <div class="media">
         <?php
+            
+        if (in_category('video') && get_field('video_embed') ) :
+            // Embed Video
+            the_field('video_embed');
+        else :
+            //Insert Images
             // Define args to get attachments
             $args = array(
                 'post_parent' => $post->ID,
@@ -53,6 +59,7 @@
             </figcaption>
         <?php
             endforeach;
+        endif;
         ?>
     </div>
     

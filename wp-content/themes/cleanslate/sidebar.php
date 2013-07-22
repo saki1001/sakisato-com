@@ -28,7 +28,7 @@
 ?>
 
     <div id="sidebar">
-        <h5>Work</h5>
+        <h5>Browse <?php wp_title('', true, 'left'); ?></h5>
         <ul class="tag-list">
             <li <?php echo $class; ?>>
                 <a href="<?php echo get_category_link($parent_cat_id); ?>">View All</a>

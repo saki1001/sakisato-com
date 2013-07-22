@@ -10,6 +10,8 @@ header:before,
 header:after,
 #header-container:before,
 #header-container:after,
+#content:before,
+#content:after,
 #main:before,
 #main:after,
 #footer-content:before,
@@ -22,6 +24,7 @@ body:after,
 header:after,
 #header-container:after,
 #main:after,
+#content:after,
 #footer-content:after {
     clear:both;
 }
@@ -29,6 +32,7 @@ body,
 #page,
 header,
 #main,
+#content,
 .footer-content {
     zoom:1; /* For IE 6/7 (trigger hasLayout) */
 }
@@ -41,6 +45,7 @@ html, body {
 }
 
 body {
+    width: 100%;
     font-family: 'Arial', Helvetica, sans-serif;
     font-size: 62.5%;
     line-height: 1;
@@ -50,15 +55,16 @@ body {
 }
 
 #page {
+/*    width: 90%;*/
+    max-width: 950px;
+    min-width: 550px;
     min-height: 100%;
     height: auto !important;
     height: 100%;
     position: relative;
     margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */;
-    padding: 0 30px;
-    width: 90%;
+    padding: 0 5%;
     background-color: #FFFFFF;
-    margin: 0 auto;
 }
 
 /*
@@ -76,13 +82,6 @@ http://ryanfait.com/
     position: relative;
     z-index: -1;
     background-color: #FFFFFF;
-}
-
-header,
-#main {
-    max-width: 950px;
-    margin: 0 auto;
-/*    float: left;*/
 }
 
 /* Text meant only for screen readers */
@@ -140,11 +139,17 @@ h1, h2, h3, h4, h5 {
 /* Header
 -------------------------------------------------------------- */
 header {
+    width: 100%;
+    max-width: 950px;
+    min-width: 550px;    
+    height: 100px;
     position: relative;
 }
 
 #header-container {
-    width: 950px;
+    width: 100%;
+    max-width: 950px;
+    min-width: 550px;
     padding: 30px 0 40px;
 /*    border-bottom: solid #C9C9C9 4px;*/
 /*    box-shadow: 0 2px 0 0 #999999;*/
@@ -179,7 +184,6 @@ header h1 a span {
 
 /* Menu
 -------------------------------------------------------------- */
-
 #main-menu {
     display: block;
     font-size: 1.9em;
@@ -215,24 +219,32 @@ header h1 a span {
 
 /* General
 -------------------------------------------------------------- */
-
 #main {
+    width: 100%;
+    max-width: 950px;
+    min-width: 550px;
+    margin: 0 auto;
     position: relative;
 }
 
-
 #main #content {
     width: 100%;
+    max-width: 950px;
+    min-width: 550px;
     padding-bottom: 42px;
     margin-bottom: 20px;
     opacity: 0; /*shown on fadein*/
     position: relative;
 }
 
+/* Single Post General
+-------------------------------------------------------------- */
 #main #content .post-nav {
     width: 100%;
     max-width: 950px;
+    min-width: 550px;
     height: 20px;
+    position: relative;
 }
 
 #main #content .post-nav li {
@@ -255,17 +267,22 @@ header h1 a span {
 
 #main #content .post {
     width: 100%;
+    max-width: 950px;
+    min-width: 550px;
 }
 
 #main #content .post .description {
-    width: 230px;
-    margin-right: 20px;
+    min-width: 110px;
+    max-width: 190px;
+    width: 20%;
+    margin-right: 6.32%;
 }
 
 #main #content .post .description .title {
     font-size: 3em;
+    font-style: italic;
     line-height: 1.1;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
 
 #main #content .post .description .content img {
@@ -281,42 +298,88 @@ header h1 a span {
     margin-bottom: 15px;
 }
 
-#main #content .post .images {
-    width: 700px;
-    margin-left: 250px;
+#main #content .post .media {
+    width: 73.68%;
+    min-width: 300px;
+    max-width: 700px;
+    margin-left: 26.32%;
 }
 
-#main #content .post .images figure {
+#main #content .post .media iframe {
+    width: 100%;
+    min-width: 300px;
+    max-width: 700px;
+}
+
+#main #content .post .media figure {
     margin-bottom: 20px;
+}
+
+#main #content .post .media figure img {
+    width: 100% !important;
+    max-width: 700px !important;
+    min-width: 300px !important;
+    height: auto !important;
 }
 
 /* Home
 -------------------------------------------------------------- */
 body.home .slideshow_container {
-    margin-left: 20px;
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 20px;
     background-color: #C9C9C9;
-    box-shadow: -20px 20px 0 0 #C6C6C6;
+    position: relative;
 }
 
+body.home .slideshow_content {
+    width: 100%;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: -20px;
+}
+
+
+/* Single Post
+-------------------------------------------------------------- */
+body.single header {
+    width: 90%;
+}
+
+body.single #header-container {
+    width: 90%;
+    position: fixed;
+    z-index: 10;
+}
+
+body.single #main #content .post-nav {
+    position: fixed;
+}
+
+body.single #main #sidebar {
+    position: fixed;
+}
+
+body.single #main #content .post .description {
+    position: fixed;
+}
 
 /* Page Template
 -------------------------------------------------------------- */
-body.page #main #content {
-    width: 100%;
-}
-
 body.page #main #content article {
+    width: 100%;
     float: left;
 }
 
 body.page #main #content article .text-container {
-    width: 450px;
-    margin-right: 30px;
+    width: 50%;
+    margin-right: 5%;
     float: left;
 }
 
 body.page #main #content article .text-container.no-image {
-    width: 750px;
+    width: 75%;
+    margin-right: 25%;
 }
 
 body.page #main #content .text-container h3 {
@@ -337,14 +400,13 @@ body.page #main #content article .text-container.no-image p {
 }
 
 body.page #main #content article figure {
-    width: 470px;
-    height: 673px;
+    width: 45%;
     background-color: #F4F4F4;
     float: right;
 }
 
 body.page #main #content article figcaption {
-    width: 470px;
+    width: 45%;
     margin: 15px 0 25px;
     font-size: 1.3em;
     font-family: 'Arial', Helvetica, sans-serif;
@@ -355,13 +417,15 @@ body.page #main #content article figcaption {
 -------------------------------------------------------------- */
 body.category #main #content,
 body.tag #main #content {
-    width:100%;
+    width: 100%;
+    max-width: 950px;
 }
 
 body.category #main #content #articles,
 body.tag #main #content #articles {
-    width: 700px;
-    margin-left: 250px;
+    width: 74%;
+    max-width: 703px;
+    margin-left: 26%;
 }
 
 #main #content #sidebar .tag-list li.current a {
@@ -375,7 +439,7 @@ body.tag #main #content #articles {
 }
 
 #main #content .browse-posts .column {
-    margin: 0 0 20px 20px;
+    margin: 0 0 2% 2%;
     position: relative;
     float: left;
 }
@@ -384,19 +448,29 @@ body.tag #main #content #articles {
     margin-left: 0;
 }
 
+#main #content .browse-posts .thumb {
+    width: 32%;
+    height: 225px;
+}
+
+#main #content .browse-posts .thumb figure {
+    width: 100%;
+    height: 100%;
+}
+
 #main #content .browse-posts .thumb a {
     display: block;
     overflow: hidden;
-    width: 220px;
-    height: 220px;
+    width: 100%;
+    height: 100%;
     opacity: 1;
     color: #666666;
     -webkit-transition: opacity .35s ease-in-out;
        -moz-transition: opacity .35s ease-in-out;
             transition: opacity .35s ease-in-out;
-    -webkit-background-size: 220px 220px !important;
-       -moz-background-size: 220px 220px !important;
-            background-size: 220px 220px !important;
+    -webkit-background-size: 100% 100% !important;
+       -moz-background-size: 100% 100% !important;
+            background-size: 100% 100% !important;
     position: relative;
     z-index: 2;
 }
@@ -407,8 +481,8 @@ body.tag #main #content #articles {
 
 #main #content .browse-posts .thumb figcaption {
     position: absolute;
-    width: 220px;
-    height: 220px;
+    width: 100%;
+    height: 100%;
     color: #666666;
     background-color: #E7A6E6;
     z-index: 1;
@@ -417,21 +491,16 @@ body.tag #main #content #articles {
 #main #content .browse-posts .thumb figcaption h4 {
     font-size: 1.9em;
     font-weight: bold;
-    padding: 20px 20px 0 20px;
-}
-
-#main #content .browse-posts .thumb figcaption p {
-    font-size: 1.35em;
-    font-weight: bold;
-    padding: 10px 0 0 20px;
+    padding: 8% 8% 0 8%;
 }
 
 
 /* Sidebar
 -------------------------------------------------------------- */
 #main #sidebar {
-    width: 230px;
-    margin-right: 20px;
+    max-width: 247px;
+    width: 23%;
+    padding-right: 3%;
     position: absolute;
 }
 
@@ -446,30 +515,6 @@ body.tag #main #content #articles {
 #main #sidebar .tag-list li {
     font-size: 1.6em;
     margin-bottom: 10px;
-}
-
-
-/* Single Post
--------------------------------------------------------------- */
-body.single #header-container {
-    position: fixed;
-    z-index: 10;
-}
-
-body.single #main {
-    margin-top: 100px;
-}
-
-body.single #main #content .post-nav {
-    position: fixed;
-}
-
-body.single #main #sidebar {
-    position: fixed;
-}
-
-body.single #main #content .post .description {
-    position: fixed;
 }
 
 
@@ -566,19 +611,21 @@ img.alignright {
 -------------------------------------------------------------- */
 #footer {
     width: 90%;
-    padding: 0 30px;
+    padding: 0 5%;
     margin: 0 auto;
     text-align: right;
     font-size: 1.6em;
-    background-color: #FFFFFF;
 }
 
 #footer-content {
+    width: 100%;
     max-width: 950px;
+    min-width: 550px;
     padding: 10px 0;
     margin: 0 auto;
     text-align: right;
     border-top: solid 1px #C9C9C9;
+    background-color: #FFFFFF;
     position: relative;
     z-index: 2;
 }

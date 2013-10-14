@@ -1,12 +1,12 @@
 <?php
 
 // Default settings
-$defaultSettings      = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
+$defaultSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultSettings(true);
 $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyleSettings(true);
 
 ?>
 
-<div class="default-slideshow-settings-tab" style="display: none; float: none;">
+<div class="default-slideshow-settings" style="display: none; float: none;">
 	<p>
 		<strong><?php _e('Note', 'slideshow-plugin'); ?>:</strong>
 	</p>
@@ -24,9 +24,11 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 	</p>
 </div>
 
-<div class="default-slideshow-settings-tab feature-filter" style="display: none;">
+<div class="default-slideshow-settings feature-filter" style="display: none;">
 
-	<h4><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></h4>
+	<p>
+		<b><?php _e('Default Slideshow Settings', 'slideshow-plugin'); ?></b>
+	</p>
 
 	<table>
 
@@ -72,9 +74,11 @@ $defaultStyleSettings = SlideshowPluginSlideshowSettingsHandler::getDefaultStyle
 	</table>
 </div>
 
-<div class="default-slideshow-settings-tab feature-filter" style="display: none;">
+<div class="default-slideshow-settings feature-filter" style="display: none;">
 
-	<h4><?php _e('Default Slideshow Stylesheet', 'slideshow-plugin'); ?></h4>
+	<p>
+		<b><?php _e('Default Slideshow Stylesheet', 'slideshow-plugin'); ?></b>
+	</p>
 
 	<table>
 

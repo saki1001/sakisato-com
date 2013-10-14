@@ -1,18 +1,8 @@
 <?php
 
-$videoId           = '';
-$showRelatedVideos = 'false';
-
-if (isset($properties['videoId']))
-{
+$videoId = '';
+if(isset($properties['videoId']))
 	$videoId = $properties['videoId'];
-}
-
-if (isset($properties['showRelatedVideos']) &&
-	$properties['showRelatedVideos'] === 'true')
-{
-	$showRelatedVideos = 'true';
-}
 
 ?>
 
@@ -28,14 +18,6 @@ if (isset($properties['showRelatedVideos']) &&
 
 		<i><?php _e('Youtube Video ID', 'slideshow-plugin'); ?></i><br />
 		<input type="text" name="<?php echo $name; ?>[videoId]" value="<?php echo $videoId; ?>" style="width: 100%;" />
-
-	</p>
-
-	<p>
-
-		<i><?php _e('Show related videos', 'slideshow-plugin'); ?></i><br />
-		<label><input type="radio" name="<?php echo $name; ?>[showRelatedVideos]" value="true" <?php checked('true', $showRelatedVideos); ?>><?php _e('Yes', 'slideshow-plugin'); ?></label>
-		<label><input type="radio" name="<?php echo $name; ?>[showRelatedVideos]" value="false" <?php checked('false', $showRelatedVideos); ?>><?php _e('No', 'slideshow-plugin'); ?></label>
 
 	</p>
 

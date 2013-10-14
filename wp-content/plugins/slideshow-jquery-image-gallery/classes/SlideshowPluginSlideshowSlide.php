@@ -28,10 +28,11 @@
  *
  * @since 2.2.0
  * @author Stefan Boonstra
+ * @version 01-02-2013
  */
-class SlideshowPluginSlideshowSlide
-{
-	/** @var array $properties */
+class SlideshowPluginSlideshowSlide {
+
+	/** Properties */
 	private $properties;
 
 	/**
@@ -41,12 +42,10 @@ class SlideshowPluginSlideshowSlide
 	 * @since 2.2.0
 	 * @param array $properties
 	 */
-	function __construct($properties)
-	{
-		if (is_array($properties))
-		{
+	function __construct($properties){
+
+		if(is_array($properties))
 			$this->properties = $properties;
-		}
 	}
 
 	/**
@@ -58,14 +57,11 @@ class SlideshowPluginSlideshowSlide
 	 * @param boolean $return (optional, defaults to true)
 	 * @return String $frontEndHTML
 	 */
-	function toFrontEndHTML($return = true)
-	{
+	function toFrontEndHTML($return = true){
+
 		// Exit when no slide type has been set or is empty
-		if (!isset($this->properties['type']) ||
-			empty($this->properties['type']))
-		{
+		if(!isset($this->properties['type']) || empty($this->properties['type']))
 			return '';
-		}
 
 		$properties = $this->properties;
 
@@ -76,24 +72,18 @@ class SlideshowPluginSlideshowSlide
 			'frontend_' . $this->properties['type'] . '.php';
 
 		// Include file path
-		if (!file_exists($file))
-		{
+		if(!file_exists($file))
 			return '';
-		}
 
 		// Start output buffering if output needs to be returned
-		if ($return)
-		{
+		if($return)
 			ob_start();
-		}
 
 		include $file;
 
 		// Return output
-		if ($return)
-		{
+		if($return)
 			return ob_get_clean();
-		}
 
 		return '';
 	}
@@ -107,14 +97,11 @@ class SlideshowPluginSlideshowSlide
 	 * @param boolean $return (optional, defaults to true)
 	 * @return String $backEndHTML
 	 */
-	function toBackEndHTML($return = true)
-	{
+	function toBackEndHTML($return = true){
+
 		// Exit when no slide type has been set or is empty
-		if (!isset($this->properties['type']) ||
-			empty($this->properties['type']))
-		{
+		if(!isset($this->properties['type']) || empty($this->properties['type']))
 			return '';
-		}
 
 		// Make properties array available to included file
 		$properties = $this->properties;
@@ -129,24 +116,18 @@ class SlideshowPluginSlideshowSlide
 			'backend_' . $this->properties['type'] . '.php';
 
 		// Include file path
-		if (!file_exists($file))
-		{
+		if(!file_exists($file))
 			return '';
-		}
 
 		// Start output buffering if output needs to be returned
-		if ($return)
-		{
+		if($return)
 			ob_start();
-		}
 
 		include $file;
 
 		// Return output
-		if ($return)
-		{
+		if($return)
 			return ob_get_clean();
-		}
 
 		return '';
 	}
@@ -160,21 +141,17 @@ class SlideshowPluginSlideshowSlide
 	 * @param boolean $return (optional, defaults to true)
 	 * @return String $backEndTemplates
 	 */
-	static function getBackEndTemplates($return = true)
-	{
+	static function getBackEndTemplates($return = true){
+
 		// Start output buffering if output needs to be returned
-		if ($return)
-		{
+		if($return)
 			ob_start();
-		}
 
 		include SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'backend_templates.php';
 
 		// Return output
 		if($return)
-		{
 			return ob_get_clean();
-		}
 
 		return '';
 	}

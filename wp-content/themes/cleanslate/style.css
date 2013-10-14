@@ -16,6 +16,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 @import url('css/reset.css');
 @import url('css/screen.css');
+@import url('css/responsive.css');
 
 /* Mobile-Friendly Stylesheet */
 @import url('css/antiscreen.css') (max-width: 480px);

@@ -15,7 +15,7 @@
         if ($prev_post):
     ?>
             <li id="prev-post">
-                <a id="prev-link" href="<?php echo $prev_post->guid; ?>" title="<?php echo $prev_post->post_title; ?>">&larr;</a>
+                <a id="prev-link" href="<?php echo $prev_post->guid; ?>" title="<?php echo 'Previous: ' . $prev_post->post_title; ?>">&larr;</a>
             </li>
     <?php
         // END Previous Post Link Conditional
@@ -28,7 +28,7 @@
         if ($next_post):
     ?>
         <li id="next-post">
-            <a id="next-link" href="<?php echo $next_post->guid; ?>" title="<?php echo $next_post->post_title; ?>">&rarr;</a>
+            <a id="next-link" href="<?php echo $next_post->guid; ?>" title="<?php echo 'Next: ' . $next_post->post_title; ?>">&rarr;</a>
         </li>
     <?php
         // END Next Post Link Conditional

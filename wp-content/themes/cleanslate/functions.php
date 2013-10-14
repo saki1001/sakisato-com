@@ -126,9 +126,6 @@ function get_category_tags($args) {
 // Adding Thumbnails
 add_theme_support( 'post-thumbnails' );
 
-// Adding Custom Thumbnail Size for Work page
-add_image_size( 'browse-thumbnail', 225, 225, true );
-
 // Adding Custom Thumbnail Size for Pages
 add_image_size( 'page', 427, 9999 );
 
@@ -147,6 +144,24 @@ update_option('image_default_link_type','none');
 
 // Custom Thumbnail Retreival
 include('php/get-thumbnail-custom.php');
+
+// Add Top-Level Menu Page to Admin
+function custom_admin_menu() {
+    add_submenu_page('edit.php', 'Art', 'Art', 'manage_options', 'edit.php?category_name=art' );
+    add_submenu_page('edit.php', 'Blog', 'Blog', 'manage_options', 'edit.php?category_name=blog' );
+    add_submenu_page('edit.php', 'Web', 'Web', 'manage_options', 'edit.php?category_name=web' );
+}
+
+add_action( 'admin_menu', 'custom_admin_menu' );
+
+function custom_admin_menu_options() {
+    if ( !current_user_can( 'manage_options' ) )  {
+     wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+    }
+    echo '<div class="wrap">';
+    echo '<p>Here is where the form would go if I actually had options.</p>';
+    echo '</div>';
+}
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.

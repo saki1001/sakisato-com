@@ -68,6 +68,9 @@ $j(document).ready(function(){
     // Call on page load
     resizeThumbs();
     
+    // Target your .container, .wrapper, .post, etc.
+    $j('#content').fitVids();
+    
     $j('a').bind('click', fadeOutRedirect);
     
 });

@@ -148,7 +148,6 @@ include('php/get-thumbnail-custom.php');
 // Add Top-Level Menu Page to Admin
 function custom_admin_menu() {
     add_submenu_page('edit.php', 'Art', 'Art', 'manage_options', 'edit.php?category_name=art' );
-    add_submenu_page('edit.php', 'Blog', 'Blog', 'manage_options', 'edit.php?category_name=blog' );
     add_submenu_page('edit.php', 'Web', 'Web', 'manage_options', 'edit.php?category_name=web' );
 }
 

@@ -16,10 +16,10 @@
 			<textarea class="description" cols="" rows="7" style="width: 100%;"></textarea><br />
 
 			<i><?php _e('Text color', 'slideshow-plugin'); ?></i><br />
-			<input type="text" class="textColor {required:false}" value="000000" /><br />
+			<input type="text" class="textColor" value="000000" /><br />
 
 			<i><?php _e('Background color', 'slideshow-plugin'); ?></i><br />
-			<input type="text" class="color {required:false}" value="FFFFFF" />
+			<input type="text" class="color" value="FFFFFF" />
 
 		</p>
 
@@ -32,9 +32,12 @@
 			<select class="urlTarget">
 				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
 				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
-			</select>
+			</select><br />
 
-		</p>
+            <input type="checkbox" class="noFollow" />
+            <i><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></i><br />
+
+        </p>
 
 		<input type="hidden" class="type" value="text" />
 
@@ -61,6 +64,14 @@
 
 		</p>
 
+		<p>
+
+			<i><?php _e('Show related videos', 'slideshow-plugin'); ?></i><br />
+			<label><input type="radio" class="showRelatedVideos" value="true"><?php _e('Yes', 'slideshow-plugin'); ?></label>
+			<label><input type="radio" class="showRelatedVideos" value="false" checked="checked""><?php _e('No', 'slideshow-plugin'); ?></label>
+
+		</p>
+
 		<input type="hidden" class="type" value="video" />
 
 		<p class="slideshow-delete-slide">
@@ -81,7 +92,7 @@
 
 		<p>
 
-			<img width="80" height="60" src="" class="attachment attachment-80x60" alt="" title="" />
+			<img width="80" height="60" src="" class="attachment attachment-80x60" alt="" title="" style="float: none; margin: 0; padding: 0;" />
 
 		</p>
 
@@ -108,7 +119,17 @@
 			<select class="urlTarget">
 				<option value="_self"><?php _e('Same window', 'slideshow-plugin'); ?></option>
 				<option value="_blank"><?php _e('New window', 'slideshow-plugin'); ?></option>
-			</select>
+			</select><br />
+
+            <input type="checkbox" class="noFollow" />
+            <i><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></i><br />
+
+        </p>
+
+		<p>
+
+			<i><?php _e('Alternative text', 'slideshow-plugin'); ?></i><br />
+			<input type="text" class="alternativeText" style="width: 100%;" />
 
 		</p>
 

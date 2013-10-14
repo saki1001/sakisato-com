@@ -2,36 +2,78 @@
 
 // The attachment should always be there
 $attachment = get_post($properties['postId']);
-if(isset($attachment)):
 
-	// Title and description
-	$title = $description = $url = $target = '';
-	if(isset($properties['title']))
+if (isset($attachment)):
+
+	$title = $description = $url = $target = $alternativeText = '';
+
+    $noFollow = false;
+
+    if (isset($properties['title']))
+	{
 		$title = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['title']);
-	if(isset($properties['description']))
+	}
+
+	if (isset($properties['description']))
+	{
 		$description = SlideshowPluginSecurity::htmlspecialchars_allow_exceptions($properties['description']);
-	if(isset($properties['url']))
+	}
+
+	if (isset($properties['url']))
+	{
 		$url = $properties['url'];
-	if(isset($properties['urlTarget']))
+	}
+
+	if (isset($properties['urlTarget']))
+	{
 		$target = $properties['urlTarget'];
+	}
+
+    if (isset($properties['noFollow']))
+    {
+        $noFollow = true;
+    }
+
+	if (isset($properties['alternativeText']))
+	{
+		$alternativeText = $properties['alternativeText'];
+	}
+	else
+	{
+		$alternativeText = $title;
+	}
 
 	// Prepare image
-	$image = wp_get_attachment_image_src($attachment->ID);
-	$imageSrc = '';
+	$image        = wp_get_attachment_image_src($attachment->ID);
+	$imageSrc     = '';
 	$displaySlide = true;
-	if(!is_array($image) || !$image){
-		if(!empty($attachment->guid))
+
+	if (!is_array($image) ||
+		!$image)
+	{
+		if (!empty($attachment->guid))
+		{
 			$imageSrc = $attachment->guid;
+		}
 		else
+		{
 			$displaySlide = false;
-	}else{
+		}
+	}
+	else
+	{
 		$imageSrc = $image[0];
 	}
-	if(!$imageSrc || empty($imageSrc)) $imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/no-img.png';
+
+	if (!$imageSrc ||
+		empty($imageSrc))
+	{
+		$imageSrc = SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/no-img.png';
+	}
 
 	$editUrl = admin_url() . '/media.php?attachment_id=' . $attachment->ID . '&amp;action=edit';
 
-	if($displaySlide): ?>
+	if ($displaySlide): ?>
 
 		<li class="widefat sortable-slides-list-item">
 
@@ -72,7 +114,17 @@ if(isset($attachment)):
 				<select name="<?php echo $name; ?>[urlTarget]">
 					<option value="_self" <?php selected('_self', $target); ?>><?php _e('Same window', 'slideshow-plugin'); ?></option>
 					<option value="_blank" <?php selected('_blank', $target); ?>><?php _e('New window', 'slideshow-plugin'); ?></option>
-				</select>
+				</select><br />
+
+                <input type="checkbox" name="<?php echo $name; ?>[noFollow]" value="" <?php checked($noFollow); ?> />
+                <i><?php _e('Don\'t let search engines follow link', 'slideshow-plugin'); ?></i><br />
+
+            </p>
+
+			<p>
+
+				<i><?php _e('Alternative text', 'slideshow-plugin'); ?></i><br />
+				<input type="text" name="<?php echo $name; ?>[alternativeText]" value="<?php echo $alternativeText; ?>" style="width: 100%;" />
 
 			</p>
 

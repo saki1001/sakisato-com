@@ -1,22 +1,25 @@
 <?php
 
+// General settings
+$stylesheetLocation = SlideshowPluginGeneralSettings::getStylesheetLocation();
+
 // Roles
 global $wp_roles;
 
 // Capabilities
 $capabilities = array(
-	SlideshowPluginGeneralSettings::$capabilities['addSlideshows'] => __('Add slideshows', 'slideshow-plugin'),
-	SlideshowPluginGeneralSettings::$capabilities['editSlideshows'] => __('Edit slideshows', 'slideshow-plugin'),
+	SlideshowPluginGeneralSettings::$capabilities['addSlideshows']    => __('Add slideshows', 'slideshow-plugin'),
+	SlideshowPluginGeneralSettings::$capabilities['editSlideshows']   => __('Edit slideshows', 'slideshow-plugin'),
 	SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'] => __('Delete slideshows', 'slideshow-plugin')
 );
 
 ?>
 
-<div class="user-capabilities feature-filter">
+<div class="general-settings-tab feature-filter">
 
-	<p>
-		<b><?php _e('Select the user roles that will able to perform certain actions.', 'slideshow-plugin');  ?></b>
-	</p>
+	<h4><?php _e('User Capabilities', 'slideshow-plugin'); ?></h4>
+
+	<p><?php _e('Select the user roles that will able to perform certain actions.', 'slideshow-plugin');  ?></p>
 
 	<table>
 
@@ -42,7 +45,7 @@ $capabilities = array(
 							id="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"
 							<?php echo $disabled; ?>
 							<?php echo $checked; ?>
-							/>
+						/>
 						<label for="<?php echo htmlspecialchars($capability . '_' . $roleSlug); ?>"><?php echo $name; ?></label>
 						<br />
 
@@ -55,4 +58,22 @@ $capabilities = array(
 		<?php endforeach; ?>
 
 	</table>
+</div>
+
+<div class="general-settings-tab feature-filter">
+
+	<h4><?php _e('Settings', 'slideshow-plugin'); ?></h4>
+
+	<table>
+		<tr>
+			<td><?php _e('Stylesheet location', 'slideshow-plugin'); ?></td>
+			<td>
+				<select name="<?php echo SlideshowPluginGeneralSettings::$stylesheetLocation; ?>">
+					<option value="head" <?php selected('head', $stylesheetLocation); ?>>Head (<?php _e('top', 'slideshow-plugin'); ?>)</option>
+					<option value="footer" <?php selected('footer', $stylesheetLocation); ?>>Footer (<?php _e('bottom', 'slideshow-plugin'); ?>)</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+
 </div>

@@ -1,0 +1,133 @@
+
+/*-----------------------------------------------max-width 1000-------------------------------------------------------*/
+
+@media screen and (max-width:1000px){
+    #main #content .post .media figure {
+        width: 100%;
+    }
+    
+    #main #content .post .media figcaption {
+        width: 90%;
+        padding: 15px 5%;
+        text-align: center;
+        position: relative;
+        left: 0;
+        margin-bottom: 20px;
+    }
+}/*/mediaquery*/
+
+/*-----------------------------------------------max-width 900-------------------------------------------------------*/
+
+
+@media screen and (max-width:900px){
+    #main #content .post .description {
+        width: 36%;
+        padding-right: 4%;
+    }
+    
+    #main #content .post .media {
+        width: 60%;
+        margin-left: 40%;
+    }
+}/*/mediaquery*/
+
+
+/*-----------------------------------------------max-width 800-------------------------------------------------------*/
+
+@media screen and (max-width:800px){
+
+}/*/mediaquery*/
+
+/*-----------------------------------------------max-width 650-------------------------------------------------------*/
+@media screen and (max-width:650px){
+/* Category
+ ------------------------------------------- */
+    #main #content .browse-posts .thumb {
+        width: 47.5%;
+    }
+    
+    #main #content .browse-posts .column {
+        margin: 0 0 3% 0;
+    }
+    
+    #main #content .browse-posts .column:nth-child(even) {
+        margin: 0 0 3% 3%;
+    }
+
+/* Single post
+ ------------------------------------------- */
+    #main #content .post-nav li#prev-post {
+        left: 0;
+    }
+
+    #main #content .post-nav li#next-post {
+        right: 0;
+    }
+    
+    #main #content .post .description {
+        width: 90%;
+        padding: 0 5%;
+        max-width: 650px;
+        margin-bottom: 8px;
+        position: relative;
+        text-align: center;
+    }
+    
+    #main #content .post .description .content {
+        display: none;
+    }
+    
+    #main #content .post .media {
+        width: 100%;
+        margin: 0;
+    }
+    
+}
+	
+}/*/mediaquery*/
+
+/*-----------------------------------------------max-width 550-------------------------------------------------------*/
+
+@media screen and (max-width:550px){
+
+}/*/mediaquery*/
+
+
+/*-----------------------------------------------max-width 400-------------------------------------------------------*/
+
+@media screen and (max-width:400px){
+    
+
+}/*/mediaquery*/
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1) {
+
+}/*/mediaquery*/
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
+
+}/*/mediaquery*/
+

@@ -39,6 +39,9 @@ $j(document).ready(function(){
             // all animation performed in load-adjacent-post.js
             // NO RETURN FALSE, needs to perform AJAX
             
+        } else if ( $j(this).attr('target') === '_blank' ) {
+            // do nothing
+            
         } else {
             var redirect = true;
             fadeOutPage(redirect, turl);
@@ -52,10 +55,18 @@ $j(document).ready(function(){
     fadeInPage();
     
     // Resize Browse Thumbs
+    var resizeThumbs = function () {
+        var thumbWidth = $j('#content .thumb').width();
+        $j("#content .thumb").height(thumbWidth);
+    };
+    
+    // Call on window resize
     $j(window).resize(function(){
-      var thumbWidth = $j('#content .thumb').width();
-      $j("#content .thumb").height(thumbWidth);
+        resizeThumbs();
     });
+    
+    // Call on page load
+    resizeThumbs();
     
     $j('a').bind('click', fadeOutRedirect);
     

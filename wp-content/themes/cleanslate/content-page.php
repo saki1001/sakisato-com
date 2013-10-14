@@ -33,6 +33,7 @@
     ?>
     
     <div id="text" class="text-container <?php echo $noImageClass; ?>">
+        <h2><?php wp_title(''); ?></h2>
         <?php the_content(); ?>
     </div>
     

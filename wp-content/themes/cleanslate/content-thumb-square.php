@@ -20,7 +20,7 @@
 
 <figure class="post-thumb">
     <?php
-        $thumb = get_thumbnail_custom($post->ID, 'browse-thumbnail');
+        $thumb = get_thumbnail_custom($post->ID, 'thumbnail');
     ?>
     <a href="<?php the_permalink(); ?>" style="background: url('<?php echo $thumb; ?>') no-repeat 0 0;"></a>
         

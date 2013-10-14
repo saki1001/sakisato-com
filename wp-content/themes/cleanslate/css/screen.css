@@ -262,6 +262,7 @@ header h1 a:hover {
 #main #content .post-nav {
     width: 90%;
     max-width: 930px;
+    min-width: 460px;
     height: 20px;
     position: fixed;
     z-index: 1000;
@@ -269,21 +270,37 @@ header h1 a:hover {
 
 #main #content .post-nav li {
     position: absolute;
-    width: 20px;
 }
 
 #main #content .post-nav li#prev-post {
-    left: -30px;
+    left: -40px;
 }
 
 #main #content .post-nav li#next-post {
-    right: -30px;
+    right: -40px;
 }
 
 #main #content .post-nav li a {
     font-size: 2em;
     font-weight: bold;
     color: #999999;
+    width: 20px;
+    height: 20px;
+    background: #FFF;
+}
+
+#main #content .post-nav li#prev-post a {
+    padding: 3px 5px 5px 5px;
+    -webkit-border-radius: 0 5px 5px 0;
+       -moz-border-radius: 0 5px 5px 0;
+            border-radius: 0 5px 5px 0;
+}
+
+#main #content .post-nav li#next-post a {
+    padding: 3px 5px 5px 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+       -moz-border-radius: 5px 0 0 5px;
+            border-radius: 5px 0 0 5px;
 }
 
 #main #content .post-nav li a:hover {
@@ -642,17 +659,18 @@ img.alignright {
 /* Footer
 -------------------------------------------------------------- */
 #footer {
-    width: 90%;
+    width: 100%;
     max-width: 950px;
+    min-width: 500px;
     margin: 0 auto;
-    padding: 0 5%;
     text-align: right;
     font-size: 1.6em;
 }
 
 #footer-content {
     width: 100%;
-    padding: 10px 0;
+    width: 90%;
+    padding: 10px 5%;
     text-align: right;
     border-top: solid 1px #C9C9C9;
     background-color: #FFFFFF;

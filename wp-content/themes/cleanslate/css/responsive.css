@@ -85,6 +85,10 @@
         text-align: center;
     }
     
+    #main #content .post .description .title {
+        margin: 0 20px;
+    }
+    
     #main #content .post .description .content {
         display: none;
     }

@@ -2,6 +2,8 @@
 /*-----------------------------------------------max-width 1000-------------------------------------------------------*/
 
 @media screen and (max-width:1000px){
+    /* Single post
+     ------------------------------------------- */
     #main #content .post .media figure {
         width: 100%;
     }
@@ -20,6 +22,8 @@
 
 
 @media screen and (max-width:900px){
+    /* Single post
+     ------------------------------------------- */
     #main #content .post .description {
         width: 36%;
         padding-right: 4%;
@@ -35,6 +39,8 @@
 /*-----------------------------------------------max-width 800-------------------------------------------------------*/
 
 @media screen and (max-width:800px){
+    /* Single post nav
+     ------------------------------------------- */
     #main #content .post-nav li#prev-post {
         left: -35px;
     }
@@ -46,8 +52,8 @@
 
 /*-----------------------------------------------max-width 650-------------------------------------------------------*/
 @media screen and (max-width:650px){
-/* Category
- ------------------------------------------- */
+    /* Category
+     ------------------------------------------- */
     #main #content .browse-posts .thumb {
         width: 47.5%;
     }
@@ -59,15 +65,15 @@
     #main #content .browse-posts .column:nth-child(even) {
         margin: 0 0 3% 3%;
     }
-
-/* Single post
- ------------------------------------------- */
+    
+    /* Single post
+     ------------------------------------------- */
     #main #content .post-nav li#prev-post {
-        left: 0;
+        left: -3px;
     }
 
     #main #content .post-nav li#next-post {
-        right: 0;
+        right: -3px;
     }
     
     #main #content .post .description {
@@ -88,14 +94,43 @@
         margin: 0;
     }
     
-}
-	
 }/*/mediaquery*/
 
-/*-----------------------------------------------max-width 550-------------------------------------------------------*/
+/*-----------------------------------------------max-width 500-------------------------------------------------------*/
 
-@media screen and (max-width:550px){
-
+@media screen and (max-width:500px){
+    /* Header
+     ------------------------------------------- */
+    header h1 a {
+        font-size: 2.6em;
+        margin-top: 5px;
+    }
+    
+    #main-menu {
+        font-size: 1.7em;
+        margin: 12px 0 0 0;
+    }
+    
+    #main-menu a {
+        margin-left: 15px;
+    }
+    
+    /* Category
+     ------------------------------------------- */
+    #main #sidebar h5 {
+        display: none;
+    }
+    
+    /* About page
+     ------------------------------------------- */
+    body.page #main #content article .text-container {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    body.page #main #content article figure {
+        width: 100%;
+    }
 }/*/mediaquery*/
 
 

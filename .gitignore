@@ -1,4 +1,4 @@
-.htaccess
+# WordPress
 wp-config.php
 wp-content/uploads/
 wp-content/blogs.dir/
@@ -12,3 +12,6 @@ wp-content/cache/
 wp-content/backups/
 sitemap.xml
 sitemap.xml.gz
+
+# Mac OS
+.DS_Store

@@ -253,7 +253,7 @@ header h1 a:hover {
     width: 100%;
     padding-bottom: 42px;
     margin-bottom: 20px;
-    opacity: 0; /*shown on fadein*/
+    /*opacity: 0;*/ /*shown on fadein*/
     position: relative;
 }
 

@@ -71,6 +71,6 @@ $j(document).ready(function(){
     // Target your .container, .wrapper, .post, etc.
     $j('#content').fitVids();
     
-    $j('a').bind('click', fadeOutRedirect);
+    // $j('a').bind('click', fadeOutRedirect);
     
 });

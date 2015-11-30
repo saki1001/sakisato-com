@@ -47,12 +47,15 @@
   */
 
  if ( function_exists ('register_sidebar')) { 
-     // register_sidebar( array(
-     //     'name' => __( 'cat-posts' ),
-     //     'id' => 'cat-posts'
-     // ) );
-     
-     register_sidebar();
+      // register_sidebar( array(
+      //     'name' => __( 'cat-posts' ),
+      //     'id' => 'cat-posts'
+      // ) );
+      $args = array(
+      'name'          => __( 'Sidebar one', 'cleanslate_sakisato.com' ),
+      'id'            => 'sidebar-one' );
+
+      register_sidebar( $args );
  }
 
 

@@ -13,5 +13,33 @@ wp-content/backups/
 sitemap.xml
 sitemap.xml.gz
 
-# Mac OS
+# ignore all files starting with . or ~
+# including .htaccess
+.*
+~*
+*~
+
+# ignore node dependency directories (used by grunt)
+node_modules/
+
+# ignore node dependency directories (used by bower)
+bower_components/
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
 .DS_Store
+
+# ignore CSS map files
+*.css.map
+
+# -------------------------
+# BEGIN Whitelisted Files
+# -------------------------
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig
+!README.md
+!CHANGELOG.md
+!composer.json

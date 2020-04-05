@@ -393,7 +393,7 @@ header h1 a:hover {
 /* Home
 -------------------------------------------------------------- */
 body.home .slideshow_container {
-    width: 100%;
+    width: calc(100% - 20px);
     margin-top: 20px;
     padding-left: 20px;
     background-color: #999;
@@ -403,7 +403,7 @@ body.home .slideshow_container {
 body.home .slideshow_content {
     width: 100%;
     background-color: #FFFFFF;
-    position: absolute;
+    position: relative;
     top: -20px;
 }
 

@@ -17,7 +17,7 @@
     <div id="footer-content">
         
         <div id="footer-logo">
-            <h4>Saki Sato &copy; 2013</h4>
+            <h4>Saki Sato &copy; <?php echo date("Y"); ?></h4>
         </div>
     </div>
 </footer><!-- #footer -->

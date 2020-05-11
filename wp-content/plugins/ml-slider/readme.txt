@@ -3,7 +3,7 @@ Contributors: matchalabs, DavidAnderson, dnutbourne, kbat82
 Tags: slideshow, slider, image slider, carousel, gallery, flexslider, wordpress slider, nivoslider, rotating banner, responsive slideshow, seo slideshow, unsplash
 Donate link: https://david.dw-perspective.org.uk/donate
 Requires at least: 3.5
-Stable tag: 3.16.1
+Stable tag: 3.16.4
 Requires PHP: 5.2
 Tested up to: 5.4
 License: GPLv2 or later
@@ -166,6 +166,14 @@ See https://www.metaslider.com/documentation/image-cropping/
 6. Administration panel - selecting slides
 
 == Changelog ==
+
+= 3.16.4 - 2020/April/16 =
+
+* FIX: Addresses a conflict with Gutenberg modules that some users are seeing (fix in 3.16.3 was incomplete)
+
+= 3.16.2 - 2020/April/08 =
+
+* FIX: Updates Gutenberg module to use the new @wordpress/block-editor library
 
 = 3.16.1 - 2020/April/03 =
 
@@ -834,4 +842,4 @@ More info/Comments: http://www.metaslider.com/coming-soon-meta-slider-2-6-free/
 * Initial version
 
 == Upgrade Notice ==
-* 3.16.1 : Update now to address a warning being shown on the edit screen.
+* 3.16.4 : Update now use the latest Gutenberg block library in MetaSlider (fix in 3.16.3 was incorrect)

@@ -1,38 +1,16 @@
 
-/* TODO: work toward complete Tailwind.css refactor (plus WP override, etc) */
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- */
-@tailwind base;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
 
-/**
- * This injects any component classes registered by plugins.
- */
-@tailwind components;
-
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- * Example, UDP universal components
- */
 @import "./components/toolbar.css";
 @import "./components/tour.css";
 
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- */
-@tailwind utilities;
+@import "tailwindcss/utilities";
 
-@import "./parts/fonts.css";
+@import "./parts/_fonts.css";
 @import "./parts/ie11.css";
 
-/**
- * Here you would add any custom styles you need that don't come out of the
- * box with Tailwind.
- */
+@import "./settings.css";
 @import "./components/wordpress.css";
 @import "./components/forms.css";
 @import "./components/notifications.css";
@@ -43,11 +21,11 @@
 /* TODO: Add responsive styles, for now min-width */
 #metaslider-ui,
 .container {
-	min-width: theme('screens.xl');
+	min-width: theme('screens.lg');
 	@apply mx-auto px-2;
 }
 .container {
-	max-width: theme('screens.xl');
+	max-width: theme('screens.lg');
 }
 
 pre#shortcode::selection,
@@ -55,7 +33,7 @@ pre#shortcode *::selection {
 	@apply bg-blue-highlight text-gray-darker;
 }
 
-/* Consider everything after this a legacy style with the intent to 
+/* Consider everything after this a legacy style with the intent to
 eventually be removed/refactored */
 
 .metaslider.wrap div.updated,
@@ -108,7 +86,7 @@ eventually be removed/refactored */
 }
 
 .metaslider .ms-settings {
-	border-collapse: separate; 
+	border-collapse: separate;
   	border-spacing: 0 0.75rem;
 }
 .metaslider .ms-settings a {
@@ -184,10 +162,10 @@ eventually be removed/refactored */
     padding-left: 5px;
     margin-right: 0;
     color: #a9a9a9;
-    line-height: 20px; 
-    right: 0; 
-    width: 155px; 
-    text-align: right; 
+    line-height: 20px;
+    right: 0;
+    width: 155px;
+    text-align: right;
 }
 .rtl .metaslider .left table tr.slide .tabs-content .new_window {
     position: relative;
@@ -252,7 +230,7 @@ eventually be removed/refactored */
 }
 .metaslider .tabs-content .inherit-from-image .default {
 	display: block;
-} 
+}
 .metaslider .tabs-content .default .no-content {
     opacity: 0.3;
     font-style: italic;
@@ -377,7 +355,7 @@ eventually be removed/refactored */
     outline: none;
 }
 .metaslider .right .slider-lib-row {
-    padding: 17px 0 9px 0;
+    padding: 0 0 9px 0;
     text-align: center;
 }
 
@@ -464,6 +442,10 @@ eventually be removed/refactored */
 
 .metaslider select {
     height: auto;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    width: 180px;
+    display: inline-block
 }
 
 .metaslider .warning {
@@ -757,7 +739,7 @@ eventually be removed/refactored */
 }
 .metaslider-ui button.hide-slide.toolbar-button input {
 	position: absolute;
-	top: 0; 
+	top: 0;
     visibility: hidden;
     opacity: 0;
 }
@@ -1045,4 +1027,176 @@ input.no_last_pass {
     bottom: 0;
     z-index: 99999999;
     background: white;
+}
+
+.ms-heading {
+	font-size: 2em;
+	margin: 20px 0;
+}
+
+/* Welcome screen */
+.metaslider-start {
+	max-width: 80%;
+	margin: 30px auto;
+}
+
+.metaslider-welcome .welcome-panel-content {
+  min-height: auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.metaslider-welcome .welcome-panel-content + .welcome-panel-content {
+  border-top: none;
+}
+
+.metaslider-welcome .ms-panel-container > div:nth-child(1) {
+  padding-right: 1rem;
+}
+
+.metaslider-welcome .ms-panel-container > div:nth-child(2) {
+  padding-left: 1rem;
+  padding-right: 0;
+}
+
+.metaslider-welcome .welcome-panel-content h2 {
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+/* All Slideshows Page */
+.toplevel_page_metaslider #wpbody-content {
+	background-color: transparent;
+}
+.toplevel_page_metaslider #ms-toolbar .container{
+    margin: 0;
+}
+#slideshows-list {
+	margin: 10px 30px;
+}
+#slideshows-list table a {
+	color: #2271b1;
+}
+#ms-toolbar h2 {
+	font-size: 21px;
+}
+#slideshows-list #nds-wp-list-table-demo {
+	margin-top: -50px;
+}
+#slideshows-list table.fixed{
+    position: relative!important;
+}
+.column-slides .image-wrap > * {
+    animation: 12s autoplaythumb infinite linear;
+}
+#slideshows-list #slides {
+	width: 105px;
+}
+.default-thumb {
+	width: 70%;
+	margin: auto;
+}
+@keyframes autoplaythumb {
+    0% {opacity: 0.0}
+    4% {opacity: 1.0}
+    33.33% {opacity: 1.0}
+    37.33% {opacity: 0.0}
+    100% {opacity: 0.0}
+}
+.column-slides .image-wrap > *:nth-child(1) {animation-delay: 0s}
+.column-slides .image-wrap > *:nth-child(2) {animation-delay: 4s}
+.column-slides .image-wrap > *:nth-child(3) {animation-delay: 8s}
+
+/* Quick Start Page */
+.metaslider_page_metaslider-start #wpbody-content,
+.metaslider-pro_page_metaslider-start #wpbody-content {
+	background-color: transparent;
+}
+.metaslider_page_metaslider-start #ms-toolbar .container,
+.metaslider-pro_page_metaslider-start #ms-toolbar .container{
+    margin: 0;
+}
+
+/* Upgrade Page */
+.metaslider_page_upgrade-metaslider #ms-toolbar .container{
+	margin: 0;
+}
+.metaslider_upgrade{
+	margin: 30px auto;
+	max-width: 80%;
+}
+.ml-upgrade-button {
+	color: #fff;
+	background: #dd6923;
+	padding: 8px 15px;
+	border-radius: 5px;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+}
+.ml-upgrade-button:focus, .ml-upgrade-button:active, .ml-upgrade-button:hover {
+	color: #fff;
+	background: #29375b;
+	border: none;
+}
+
+/* Settings Page */
+#metaslider-settings-page{
+    background-color: #F0F0F1;
+}
+
+
+@media only screen and (min-width : 320px) {
+    #metaslider-ui, .container {
+        min-width: auto;
+        width: 100%;
+    }
+    /* Quick Start */
+    .metaslider_page_metaslider-start .ms-heading,
+    .metaslider-pro_page_metaslider-start .ms-heading {
+        font-size: 1.5em;
+        line-height: 1.2;
+    }
+    .metaslider-start {
+        margin: 20px !important;
+        max-width: none;
+    }
+    .metaslider-welcome .ms-panel-container > div:nth-child(2) {
+        padding-left: 0;
+    }
+    /* Dashboard */
+    #slideshows-list {
+        margin: 10px;
+    }
+    p.search-box {
+        bottom: -85px;
+        width: 90%;
+    }
+}
+@media only screen and (min-width : 768px) {
+    /* Quick Start */
+    .metaslider-welcome .ms-panel-container > div:nth-child(2) {
+        padding-left: 1rem;
+    }
+    /* Dashboard */
+    #slideshows-list {
+        margin: 10px 30px;
+    }
+    p.search-box {
+        bottom: auto;
+        width: auto;
+        margin-top: -50px !important;
+    }
+}
+@media only screen and (min-width : 990px) {
+    /* Quick Start */
+    .metaslider_page_metaslider-start .ms-heading,
+    .metaslider-pro_page_metaslider-start .ms-heading {
+        font-size: 2em;
+    }
+    .metaslider-start {
+        margin: 30px auto!important;
+        max-width: 80%;
+    }
 }

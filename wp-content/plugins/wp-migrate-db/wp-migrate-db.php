@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: WP Migrate DB
+Plugin Name: WP Migrate Lite
 Plugin URI: https://wordpress.org/plugins/wp-migrate-db/
-Description: Exports your database as a MySQL data dump (much like phpMyAdmin), does a find and replace on URLs and file paths, then allows you to save it to your computer.
-Author: Delicious Brains
-Version: 1.0.13
-Author URI: https://deliciousbrains.com
+Description: Migrate your database. Export full sites including media, themes, and plugins. Find and replace content with support for serialized data.
+Author: WP Engine
+Version: 2.6.5
+Author URI: https://deliciousbrains.com/wp-migrate-db-pro/?utm_source=plugin-header&utm_medium=plugin&utm_campaign=plugin-author&utm_content=wp-migrate-author
 Network: True
 Text Domain: wp-migrate-db
 Domain Path: /languages/
@@ -22,33 +22,33 @@ Domain Path: /languages/
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // **********************************************************************
 
-$wpmdb_base_path                                   = dirname( __FILE__ );
-$GLOBALS['wpmdb_meta']['wp-migrate-db']['version'] = '1.0.13';
+defined( 'ABSPATH' ) || exit;
 
-if ( ! defined( 'WPMDB_MINIMUM_PHP_VERSION' ) ) {
-	define( 'WPMDB_MINIMUM_PHP_VERSION', '5.4' );
+$wpmdb_base_path = dirname( __FILE__ );
+
+require_once 'version-lite.php';
+
+
+
+$plugin_root = '/';
+
+if(!defined('WPMDB_VENDOR_DIR')){
+    define('WPMDB_VENDOR_DIR', __DIR__ . $plugin_root."vendor");
 }
+
+require WPMDB_VENDOR_DIR . '/autoload.php';
+
+require 'setup-plugin.php';
 
 if ( version_compare( PHP_VERSION, WPMDB_MINIMUM_PHP_VERSION, '>=' ) ) {
 	require_once $wpmdb_base_path . '/class/autoload.php';
 	require_once $wpmdb_base_path . '/setup-mdb.php';
 }
 
-if ( ! function_exists( 'wpmdb_deactivate_other_instances' ) ) {
-	require_once $wpmdb_base_path . '/class/deactivate.php';
-}
-
-add_action( 'activated_plugin', 'wpmdb_deactivate_other_instances' );
-
-if ( ! class_exists( 'WPMDB_PHP_Checker' ) ) {
-	require_once $wpmdb_base_path . '/php-checker.php';
-}
-
-$php_checker = new WPMDB_PHP_Checker( __FILE__, WPMDB_MINIMUM_PHP_VERSION );
-if ( ! $php_checker->is_compatible_check() ) {
-	register_activation_hook( __FILE__, array( 'WPMDB_PHP_Checker', 'wpmdb_php_version_too_low' ) );
-}
-
 function wpmdb_remove_mu_plugin() {
 	do_action( 'wp_migrate_db_remove_compatibility_plugin' );
+}
+
+if (class_exists('\Deliciousbrains\MigrateDevTools\Launcher') && \DeliciousBrains\WPMDB\Common\Util\Util::is_dev_environment()) {
+    \Deliciousbrains\MigrateDevTools\Launcher::register($wpmdb_base_path);
 }

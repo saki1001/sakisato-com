@@ -8,34 +8,34 @@ Author URI: http://dev7studios.com
 Supports Thumbs: true
 */
 
-.metaslider .theme-light.slider-wrapper {
+.theme-light.slider-wrapper {
     background: #fff;
     padding: 10px;
 }
-.metaslider .theme-light .nivoSlider {
+.theme-light .nivoSlider {
 	position:relative;
 	background:#fff url(loading.gif) no-repeat 50% 50%;
     margin-bottom:10px;
     overflow: visible;
 }
-.metaslider .theme-light .nivoSlider img {
+.theme-light .nivoSlider img {
 	position:absolute;
 	top:0px;
 	left:0px;
 	display:none;
 }
-.metaslider .theme-light .nivoSlider a {
+.theme-light .nivoSlider a {
 	border:0;
 	display:block;
 }
 
-.metaslider .theme-light .nivo-controlNav {
+.theme-light .nivo-controlNav {
 	text-align: left;
 	padding: 0;
 	position: relative;
 	z-index: 10;
 }
-.metaslider .theme-light .nivo-controlNav a {
+.theme-light .nivo-controlNav a {
 	display:inline-block;
 	width:10px;
 	height:10px;
@@ -44,11 +44,11 @@ Supports Thumbs: true
 	border:0;
 	margin: 0 2px;
 }
-.metaslider .theme-light .nivo-controlNav a.active {
+.theme-light .nivo-controlNav a.active {
 	background-position:0 100%;
 }
 
-.metaslider .theme-light .nivo-directionNav a {
+.theme-light .nivo-directionNav a {
 	display:block;
 	width:30px;
 	height:30px;
@@ -59,43 +59,44 @@ Supports Thumbs: true
 	bottom: -36px;
 	z-index: 11;
 }
-.metaslider .theme-light .nivo-directionNav a:hover {
+.theme-light .nivo-directionNav a:hover {
     background-color: #eee;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
-.metaslider .theme-light a.nivo-nextNav {
+.theme-light a.nivo-nextNav {
 	background-position:160% 50%;
 	right:0px;
 }
-.metaslider .theme-light a.nivo-prevNav {
+.theme-light a.nivo-prevNav {
     background-position:-60% 50%;
     left: auto;
 	right: 35px;
 }
 
-.metaslider .theme-light .nivo-caption {
+.theme-light .nivo-caption {
     font-family: Helvetica, Arial, sans-serif;
 }
-.metaslider .theme-light .nivo-caption a {
+.theme-light .nivo-caption a {
     color:#fff;
     border-bottom:1px dotted #fff;
 }
-.metaslider .theme-light .nivo-caption a:hover {
+.theme-light .nivo-caption a:hover {
     color:#fff;
 }
 
-.metaslider .theme-light .nivo-controlNav.nivo-thumbs-enabled {
+.theme-light .nivo-controlNav.nivo-thumbs-enabled {
 	width: 80%;
 }
-.metaslider .theme-light .nivo-controlNav.nivo-thumbs-enabled a {
+.theme-light .nivo-controlNav.nivo-thumbs-enabled a {
 	width: auto;
 	height: auto;
 	background: none;
 	margin-bottom: 5px;
 }
-.metaslider .theme-light .nivo-controlNav.nivo-thumbs-enabled img {
+.theme-light .nivo-controlNav.nivo-thumbs-enabled img {
 	display: block;
+	width: 120px;
 	height: auto;
 }

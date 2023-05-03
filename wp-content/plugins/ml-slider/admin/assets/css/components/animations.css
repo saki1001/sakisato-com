@@ -10,3 +10,9 @@
 	opacity: 0;
 	transform: translateY(0);
 }
+.settings-fade-enter-active, .settings-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.settings-fade-enter, .settings-fade-leave-to {
+  opacity: 0;
+}

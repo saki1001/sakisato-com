@@ -10,9 +10,7 @@ Supports Thumbs: true
 
 .metaslider .theme-default .nivoSlider {
 	position:relative;
-    -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
-    -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
-    box-shadow: 0px 1px 5px 0px #4a4a4a;
+	box-shadow: 0px 1px 5px 0px #4a4a4a;
 }
 .metaslider .theme-default .nivoSlider img {
 	position:absolute;
@@ -27,9 +25,7 @@ Supports Thumbs: true
 
 .metaslider .theme-default .nivo-controlNav {
 	text-align: center;
-	padding: 15px 0;
-	width: 100%;
-	z-index: 99;
+	padding: 20px 0;
 }
 .metaslider .theme-default .nivo-controlNav a {
 	display:inline-block;
@@ -52,10 +48,7 @@ Supports Thumbs: true
 	text-indent:-9999px;
 	border:0;
 	opacity: 0;
-	-webkit-transition: all 200ms ease-in-out;
-    -moz-transition: all 200ms ease-in-out;
-    -o-transition: all 200ms ease-in-out;
-    transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out;
 }
 .metaslider .theme-default:hover .nivo-directionNav a { opacity: 1; }
 .metaslider .theme-default a.nivo-nextNav {
@@ -67,14 +60,14 @@ Supports Thumbs: true
 }
 
 .metaslider .theme-default .nivo-caption {
-    font-family: Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 }
 .metaslider .theme-default .nivo-caption a {
-    color:#fff;
-    border-bottom:1px dotted #fff;
+	color:#fff;
+	border-bottom:1px dotted #fff;
 }
 .metaslider .theme-default .nivo-caption a:hover {
-    color:#fff;
+	color:#fff;
 }
 
 .metaslider .theme-default .nivo-controlNav.nivo-thumbs-enabled {
@@ -88,5 +81,6 @@ Supports Thumbs: true
 }
 .metaslider .theme-default .nivo-controlNav.nivo-thumbs-enabled img {
 	display: block;
+	width: 120px;
 	height: auto;
 }

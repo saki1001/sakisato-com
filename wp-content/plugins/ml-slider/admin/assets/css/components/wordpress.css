@@ -1,5 +1,5 @@
 div#wpcontent {
-	@apply px-0;
+	@apply px-0 !important;
 }
 
 div#wpbody-content {
@@ -10,10 +10,6 @@ div#wpbody-content > .notice {
 	@apply m-6;
 }
 
-div#wpbody-content > * {
-	@apply hidden;
-}
-
 img {
 	@apply border-none;
 }
@@ -21,4 +17,8 @@ img {
 #adminmenu .wp-menu-image img {
 	@apply inline border-0;
 	box-sizing: initial;
+}
+.update-nag,
+div#wpfooter {
+	@apply hidden !important;
 }
